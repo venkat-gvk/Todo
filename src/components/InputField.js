@@ -35,6 +35,7 @@ const InputField = ({ input, setInput, list, setList }) => {
     localStorage.clear();
   };
 
+  const disableButton = !input.trim() ? "disableButton" : "add";
 
   return (
     <div id="form-control">
@@ -53,11 +54,7 @@ const InputField = ({ input, setInput, list, setList }) => {
         </label>
 
         <div className="button_cont" align="center">
-          <button
-            type="submit"
-            className="add"
-            disabled={!input}
-            onClick={addToList}>
+          <button type="submit" className={disableButton} onClick={addToList}>
             Add to List
           </button>
 

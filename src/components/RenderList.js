@@ -1,7 +1,6 @@
 import React from "react";
 
 const RenderList = ({ list, setList }) => {
-  
   const deleteItem = id => {
     localStorage.removeItem(id);
     const updateList = list.filter(l => l.id !== id);
@@ -23,4 +22,4 @@ const RenderList = ({ list, setList }) => {
   );
 };
 
-export default RenderList;
+export default React.memo(RenderList);
