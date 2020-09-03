@@ -36,6 +36,7 @@ const InputField = ({ input, setInput, list, setList }) => {
   };
 
   const disableButton = !input.trim() ? "disableButton" : "add";
+  const clearButton = list.length ? 'clear' : 'disableClear'
 
   return (
     <div id="form-control">
@@ -58,7 +59,7 @@ const InputField = ({ input, setInput, list, setList }) => {
             Add to List
           </button>
 
-          <button type="submit" className="clear" onClick={clearList}>
+          <button type="submit" className={clearButton} onClick={clearList}>
             Clear
           </button>
         </div>
